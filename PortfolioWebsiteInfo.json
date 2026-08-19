@@ -1,0 +1,17 @@
+{
+ "title": "Aurora Server",
+ "description": "A Ubuntu server, where I run my programs.",
+ "language": [""],
+ "liveDemo": "",
+ "images": [
+   "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112950/Aurora-img-1_eof8se.jpg",
+   "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112959/Aurora-img-2_juysuh.jpg",
+   "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112960/Aurora-img-3_xknhty.jpg",
+   "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112968/Aurora-img-4_uurirn.jpg"
+ ],
+ "videoDemo": "",
+ "Priority": 1,
+ "type": "Solo",
+ "version": "Prod",
+ "Visibilty": true
+}
