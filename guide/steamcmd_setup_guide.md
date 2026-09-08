@@ -23,7 +23,7 @@ SteamCMD is a 32-bit application, so you must enable the 32-bit architecture and
 sudo dpkg --add-architecture i386
 sudo add-apt-repository multiverse
 sudo apt update
-sudo apt install steamcmd tmux
+sudo apt install steamcmd tmux samba
 ```
 *Note: During the SteamCMD install, a purple screen will appear asking you to accept the license agreement. Use the **Tab** key to select "OK/I Agree" and press **Enter**.*
 
@@ -50,7 +50,7 @@ set_download_throttle 2000
 @sSteamCmdForcePlatformType windows
 
 # Tell Steam where to save the files
-force_install_dir /mnt/database/steam_games
+force_install_dir /mnt/database/steam_games/[GAME NAME AS IN STEAM]
 
 # Log into your account (requires Steam Guard code on first login)
 login your_steam_username
@@ -70,3 +70,37 @@ Log back into your server and run:
 tmux attach -t steam
 ```
 *(When the download finishes, type `quit` to exit SteamCMD, and `exit` to close the tmux session).*
+
+## 6. SAMBA Setup
+
+Open the Samba configuration file to share the directory over your network:
+```bash
+sudo nano /etc/samba/smb.conf
+```
+
+Scroll to the bottom and paste this block:
+```ini
+[steam_games]
+path = /mnt/database/steam_games
+valid users = aurora
+read only = no
+```
+*(Save and exit by pressing **Ctrl+O**, **Enter**, then **Ctrl+X**)*
+
+Set a Samba password for your user:
+```bash
+sudo smbpasswd -a aurora
+```
+
+Restart the service to apply changes:
+```bash
+sudo systemctl restart smbd
+```
+
+## 7. Game Files Setup
+
+1. Open Windows File Explorer and navigate to your main Steam library folder. By default, this is located at `C:\Program Files (x86)\Steam\steamapps\common`.
+2. Paste the game folder you copied from your Ubuntu server directly into this `common` folder.
+3. Open the Steam app on your PC, go to your **Library**, and select the game you just transferred. Click the blue **Install** button.
+4. Ensure the "Install under" location exactly matches the drive where you just pasted the game files (e.g., your `C:` drive). 
+5. Click **Install**. Steam will discover the existing files instead of downloading the game from scratch.
