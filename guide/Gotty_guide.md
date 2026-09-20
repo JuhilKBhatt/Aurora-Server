@@ -146,3 +146,31 @@ sudo systemctl start gotty
 ## Step 9: Secure with Cloudflare Zero Trust
 
 Finally, navigate to **Cloudflare Zero Trust** to set up a secure tunnel to your local port `3889` (or whichever port you configured in the service file) to expose the terminal securely without opening inbound firewall ports.
+
+# Uninstall GoTTY (2FA Kept)
+
+## 1. Stop and Disable the GoTTY Service (2FA still active)
+
+Prevents errors during removal
+Run the following commands to stop the background process you created in Step 8 of your script, disable it from running at boot, and delete the service file.
+
+```bash
+sudo systemctl stop gotty
+sudo systemctl disable gotty
+sudo rm /etc/systemd/system/gotty.service
+sudo systemctl daemon-reload
+```
+
+To verify, run `systemctl status gotty`. It should return "Unit gotty.service could not be found."
+
+## 2. Remove the GoTTY Binary
+
+Deletes the application
+Remove the binary you downloaded and moved in Step 7 of your script.
+
+```bash
+sudo rm /usr/local/bin/gotty
+```
+To verify, run gotty --version. The terminal should reply with "command not found".
+
+## 3. Disable the Cloudflare Tunnel
