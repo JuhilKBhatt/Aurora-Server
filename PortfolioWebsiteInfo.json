@@ -1,7 +1,7 @@
 {
  "title": "Aurora Server",
- "description": "A Ubuntu server, where I run my programs.",
- "language": [""],
+ "description": "A Ubuntu server, where I run my programs. Including this website!",
+ "language": ["Terminal", "Docker", "Linux", "Ubuntu"],
  "liveDemo": "",
  "images": [
    "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112950/Aurora-img-1_eof8se.jpg",
