@@ -25,6 +25,16 @@ Start the SnapOtter container in detached mode, exposing port 1349, allocating a
 docker run -d --name SnapOtter --gpus all -p 1349:1349 -v SnapOtter-data:/data snapotter/snapotter:latest
 ```
 
+Add a restart policy:
+```bash
+docker update --restart unless-stopped SnapOtter
+```
+You can verify this setting was successfully applied by running:
+```bash
+docker inspect -f '{{.HostConfig.RestartPolicy.Name}}' SnapOtter
+```
+This command will output `unless-stopped`.
+
 Run the following command in your terminal to see a list of your currently active containers and confirm `SnapOtter` is running:
 ```bash
 docker ps
