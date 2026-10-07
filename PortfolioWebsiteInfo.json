@@ -1,17 +1,37 @@
 {
- "title": "Aurora Server",
- "description": "A Ubuntu server, where I run my programs. Including this website!",
- "language": ["Terminal", "Docker", "Linux", "Ubuntu"],
- "liveDemo": "",
- "images": [
-   "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112950/Aurora-img-1_eof8se.jpg",
-   "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112959/Aurora-img-2_juysuh.jpg",
-   "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112960/Aurora-img-3_xknhty.jpg",
-   "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112968/Aurora-img-4_uurirn.jpg"
- ],
- "videoDemo": "",
- "Priority": 1,
- "type": "Solo",
- "version": "Prod",
- "Visibilty": true
+  "title": "Aurora Server",
+  "description": "A dedicated Ubuntu home server infrastructure running production workloads, including portfolio services, automated CI/CD deployment pipelines via self-hosted GitHub Actions runners, zero-trust tunnels, and GPU-accelerated Docker containers.",
+  "techStack": {
+    "Backend": [
+      "Ubuntu Linux"
+    ],
+    "AI": [
+      "NVIDIA CUDA"
+    ],
+    "DevSecOps": [
+      "Docker",
+      "GitHub Actions",
+      "Cloudflare Zero Trust"
+    ]
+  },
+  "liveDemo": "",
+  "images": [
+    "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112950/Aurora-img-1_eof8se.jpg",
+    "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112959/Aurora-img-2_juysuh.jpg",
+    "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112960/Aurora-img-3_xknhty.jpg",
+    "https://res.cloudinary.com/dmj4ggkjq/image/upload/v1787112968/Aurora-img-4_uurirn.jpg"
+  ],
+  "videoDemo": "",
+  "Priority": 1,
+  "category": "Server",
+  "type": "Solo",
+  "version": "Prod",
+  "versionNumber": "1.0.0",
+  "Highlights": [
+    "Automated CI/CD deployment pipeline utilizing self-hosted GitHub Actions runners with unprivileged deployer sandboxing and passwordless Docker control",
+    "Secure external access via Cloudflare Zero Trust tunnels and host Nginx reverse proxy without exposing public inbound firewall ports",
+    "Hardware-accelerated container runtime powered by NVIDIA Container Toolkit passthrough for GPU video rendering and CUDA workloads",
+    "Hardened web terminal interface via ttyd secured with Google Authenticator PAM Two-Factor Authentication (2FA)"
+  ],
+  "Visibilty": true
 }
